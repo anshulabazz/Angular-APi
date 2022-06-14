@@ -1,0 +1,17 @@
+<div class="col-md-8">
+  <input type="text" class="form-control" id="title" [(ngModel)]="title" placeholder="Enter Title" />
+  <button type="button" class="btn btn-primary" (click)="searchitem()">Search</button>
+</div>
+
+
+
+<div class="col-md-8">
+<ul class="list-group">
+  <li class="list-group-item" *ngFor ="let item of item; let i=index" (click)="clickitem(item,i)" [class.active]="i==currentindex" >{{item.name}}</li>
+</ul>
+  <button type="button" class="btn btn-danger" (click)="deleteitem()">Delete All</button>
+</div>
+<div>
+  <app-item-list [currentitem]="currentitem" [viewmode]="true"></app-item-list>
+</div>
+
